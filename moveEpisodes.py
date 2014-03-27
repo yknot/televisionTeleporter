@@ -9,9 +9,19 @@ transmission_list = 'transmission-remote -l'
 process = subprocess.Popen(transmission_list.split(), stdout=subprocess.PIPE)
 transmission_output = process.communicate()[0]
 
-# split output into strings
+# split output into strings by line
 transmission_lines = transmission_output.splitlines()
 nlines=len(transmission_lines)
+
+# directory listing command, to provide list of folders for name comparison
+list_cmd= 'ls /media/storage/XBMCMedia/TV\ Shows/'
+process = subprocess.Popen(list_cmd.split(), stdout=subprocess.PIPE)
+list_output = process.communicate()[0]
+show_dirs=list_output.splitlines()
+
+
+# to be used in target directory string
+dir_stem='/media/storage/XBMCMedia/TV\ Shows/'
 
 # for each line
 for i in transmission_lines:
@@ -36,19 +46,19 @@ for i in transmission_lines:
 
                 # make sure success
 
-                # Old code comments, to keep in case I broke something
-                # loop through and get id indexes 
-                # for x in transmission_list:
+                # parse name
+                name=tor_name.split('.')
+
+                # Need code to find target directory, I thought about this a bit.
+                # We might not even need an xml file, we can likely get away with just using bash.
+                # Using ls with wildcards (taken from filenames of torrents)
+                # we should be able to deduce what the target directory is.
+                # This would also make it easier than figuring out where to put
+                # the backslashes for spaces in folder names.
+                # We could even have python figure out which directory it is, given filename 
                 
-                        # if only numbers without . (trying to find ints)
-                #        if re.match("^[0-9]*$", x):
-                #                ids.append(transmission_list.index(x))
 
-                # for each id
-                # for y in ids:
+                # move command (commented out until target directory is coded)
+                # move_command="mv Torrents/" + str(tor_name) + " " + str(target_directory)
 
-                #        # if the index of seeding is the appropriate distance away such that it is an id
-                #        if index - y > 4 and index - y < 10:
-
-                                
-
+                
