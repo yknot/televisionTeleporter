@@ -6,10 +6,6 @@
 	</archer>
 	<!-- <arrested_developement>
 	</arrested_developement> -->
-	<big_bang_theory>
-		<name>The.Big.Bang.Theory</name>
-		<url></url>
-	</big_bang_theory>
 	<bobs_burgers>
 		<name>Bobs.Burgers</name>
 		<url></url>
@@ -124,6 +120,10 @@
 		<name>The.Americans.(2013)</name>
 		<url></url>
 	</the_americans>
+	<the_big_bang_theory>
+		<name>The.Big.Bang.Theory</name>
+		<url></url>
+	</the_big_bang_theory>
 	<the_borgias>
 		<name>The.Borgias</name>
 		<url></url>
