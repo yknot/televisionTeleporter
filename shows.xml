@@ -1,136 +1,174 @@
 <?xml version="1.0"?>
 <shows>
 	<archer>
-		<name></name>
+		<name>Archer.(2009)</name>
+		<url></url>
 	</archer>
 	<!-- <arrested_developement>
 	</arrested_developement> -->
 	<big_bang_theory>
-		<name></name>
+		<name>The.Big.Bang.Theory</name>
+		<url></url>
 	</big_bang_theory>
 	<bobs_burgers>
-		<name></name>
+		<name>Bobs.Burgers</name>
+		<url></url>
 	</bobs_burgers>
 	<!-- <breaking_bad>
 	</breaking_bad> -->
 	<brooklyn_99>
-		<name></name>
+		<name>Brooklyn.Nine-Nine</name>
+		<url></url>
 	</brooklyn_99>
 	<!-- <burn_notice>
 	</burn_notice> -->
 	<community>
-		<name></name>
+		<name>Community</name>
+		<url></url>
 	</community>
 	<dexter>
-		<name></name>
+		<name>Dexter</name>
+		<url></url>
 	</dexter>
 	<drunk_history>
-		<name></name>
+		<name>Drunk.History</name>
+		<url></url>
 	</drunk_history>
 	<family_guy>
-		<name></name>
+		<name>Family.Guy</name>
+		<url></url>
 	</family_guy>
 	<!-- <firefly>
 	</firefly> -->
 	<game_of_thrones>
-		<name></name>
+		<name>Game.Of.Thrones</name>
+		<url></url>
 	</game_of_thrones>
 	<glee>
-		<name></name>
+		<name>Glee</name>
+		<url></url>
 	</glee>
 	<!-- <hello_ladies>
 	</hello_ladies> -->
 	<house_of_cards>
-		<name></name>
+		<name>House.of.Cards.(2013)</name>
+		<url></url>
 	</house_of_cards>
 	<house_of_lies>
-		<name></name>
+		<name>House.of.Lies</name>
+		<url></url>
 	</house_of_lies>
 	<its_always_sunny>
-		<name></name>
+		<name>It's.Always.Sunny.in.Philadelphia</name>
+		<url></url>
 	</its_always_sunny>
 	<jimmy_fallon>
-		<name></name>
+		<name>The.Tonight.Show.Starring.Jimmy.Fallon</name>
+		<url></url>
 	</jimmy_fallon>
 	<key_and_peele>
-		<name></name>
+		<name>Key.and.Peele</name>
+		<url></url>
 	</key_and_peele>
 	<marvels_agents_of_shield>
-		<name></name>
+		<name>Marvel's.Agents.of.S.H.I.E.L.D.</name>
+		<url></url>
 	</marvels_agents_of_shield>
 	<new_girl>
-		<name></name>
+		<name>New.Girl</name>
+		<url></url>
 	</new_girl>
 	<!-- <nexgen_tour_2011>
 	</nexgen_tour_2011> -->
 	<nova>
-		<name></name>
+		<name>Nova.ScienceNOW</name>
+		<url></url>
 	</nova>
 	<parks_and_recreation>
-		<name></name>
+		<name>Parks.and.Recreation</name>
+		<url></url>
 	</parks_and_recreation>
 	<pretty_little_liars>
-		<name></name>
+		<name>Pretty.Little.Liars</name>
+		<url></url>
 	</pretty_little_liars>
 	<psych>
-		<name></name>
+		<name>Psych</name>
+		<url></url>
 	</psych>
 	<resurrection>
-		<name></name>
+		<name>Resurrection.(2014).(US)</name>
+		<url></url>
 	</resurrection>
 	<royal_pains>
-		<name></name>
+		<name>Royal.Pains</name>
+		<url></url>
 	</royal_pains>
 	<saturday_night_live>
-		<name></name>
+		<name>Saturday.Night.Live</name>
+		<url></url>
 	</saturday_night_live>
 	<seth_meyers>
-		<name></name>
+		<name>Late.Night.With.Seth.Meyers</name>
+		<url></url>
 	</seth_meyers>
 	<sherlock>
-		<name></name>
+		<name>Sherlock</name>
+		<url></url>
 	</sherlock>
 	<suits>
-		<name></name>
+		<name>Suits</name>
+		<url></url>
 	</suits>
 	<the_americans>
-		<name></name>
+		<name>The.Americans.(2013)</name>
+		<url></url>
 	</the_americans>
 	<the_borgias>
-		<name></name>
+		<name>The.Borgias</name>
+		<url></url>
 	</the_borgias>
 	<the_it_crowd>
-		<name></name>
+		<name>The.IT.Crowd</name>
+		<url></url>
 	</the_it_crowd>
 	<the_league>
-		<name></name>
+		<name>The.League</name>
+		<url></url>
 	</the_league>
 	<!-- <the_office>
 	</the_office> -->
 	<the_simpsons>
-		<name></name>
+		<name>The.Simpsons</name>
+		<url></url>
 	</the_simpsons>
 	<the_tomorrow_people>
-		<name></name>
+		<name>The.Tomorrow.People.(US)</name>
+		<url></url>
 	</the_tomorrow_people>
 	<the_walking_dead>
-		<name></name>
+		<name>The.Walking.Dead</name>
+		<url></url>
 	</the_walking_dead>
 	<tron_uprising>
-		<name></name>
+		<name>Tron.Uprising</name>
+		<url></url>
 	</tron_uprising>
 	<true_detective>
-		<name></name>
+		<name>True.Detective</name>
+		<url></url>
 	</true_detective>
 	<!-- <veronica_mars>
 	</veronica_mars> -->
 	<white_collar>
-		<name></name>
+		<name>White.Collar</name>
+		<url></url>
 	</white_collar>
 	<!-- <winter_olympics_2014>
 	</winter_olympics_2014> -->
 	<workaholics>
-		<name></name>
+		<name>Workaholics</name>
+		<url></url>
 	</workaholics>
 
 </shows>
