@@ -1,7 +1,6 @@
 
 
 import subprocess
-import re
 
 # command to find list of torrents
 transmission_list = 'transmission-remote -l'
@@ -14,8 +13,8 @@ transmission_lines = transmission_output.splitlines()
 nlines=len(transmission_lines)
 
 # directory listing command, to provide list of folders for name comparison
-list_cmd= 'ls /media/storage/XBMCMedia/TV\ Shows/'
-process = subprocess.Popen(list_cmd.split(), stdout=subprocess.PIPE)
+list_cmd= '/media/storage/XBMCMedia/TV Shows/'
+process = subprocess.Popen(['ls', list_cmd], stdout=subprocess.PIPE)
 list_output = process.communicate()[0]
 show_dirs=list_output.splitlines()
 
@@ -24,7 +23,7 @@ show_dirs=list_output.splitlines()
 dir_stem='/media/storage/XBMCMedia/TV\ Shows/'
 
 # for each line
-for i in transmission_lines:
+for i in xrange(len(transmission_lines)):
 
         transmission_list=transmission_lines[i].split()
         # if one or more of the torrents are seeding
@@ -35,7 +34,7 @@ for i in transmission_lines:
                 #ids = []
 
                 # get torrent ID number
-        `       tor_id= transmission_list[0]
+                tor_id= transmission_list[0]
 
                 # get torrent name (for moving torrents)
                 tor_name=transmission_list[len(transmission_list)-1]
