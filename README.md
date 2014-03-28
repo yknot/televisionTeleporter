@@ -13,3 +13,6 @@ periods, we can see if the resultant strings match up with any of our directory 
 either with creative ls commands, or having python compare the separate strings of the filenames with the 
 names of our directories, or some form of both).  Once we have a reliable way of finding the target directory,
 this part of the teleporter is good to go.
+
+Update 3/27/14 (2)
+Target directory code completed, script should be smart enough to automatically move things now!

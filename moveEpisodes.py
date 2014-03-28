@@ -1,6 +1,7 @@
 
 
 import subprocess
+import re
 
 # command to find list of torrents
 transmission_list = 'transmission-remote -l'
@@ -20,7 +21,7 @@ show_dirs=list_output.splitlines()
 
 
 # to be used in target directory string
-dir_stem='/media/storage/XBMCMedia/TV\ Shows/'
+dir_stem='/media/storage/XBMCMedia/TV Shows/'
 
 # for each line
 for i in xrange(len(transmission_lines)):
@@ -46,18 +47,39 @@ for i in xrange(len(transmission_lines)):
                 # make sure success
 
                 # parse name
-                name=tor_name.split('.')
+                for j in xrange(len(show_dirs)):
 
-                # Need code to find target directory, I thought about this a bit.
-                # We might not even need an xml file, we can likely get away with just using bash.
-                # Using ls with wildcards (taken from filenames of torrents)
-                # we should be able to deduce what the target directory is.
-                # This would also make it easier than figuring out where to put
-                # the backslashes for spaces in folder names.
-                # We could even have python figure out which directory it is, given filename 
-                
+                        # convert directory name eztv format
+                        temp=show_dirs[j].lower()
+                        temp.replace(" ", ".")
 
-                # move command (commented out until target directory is coded)
-                # move_command="mv Torrents/" + str(tor_name) + " " + str(target_directory)
+                        if temp in tor_name:
+                             # find season number
+                             season=re.match("[s,S]\d\d",tor_name)   
+                             season_int=str(int(season[1:]))
+                             season_str=season[1:]
 
+                             # create path to show directory
+                             show_path=dir_stem + str(show_dirs[j]) + "/"
+
+
+                             # list directories in show's directory (season folders)
+                             process2 = subprocess.Popen(['ls', show_path], stdout=subprocess.PIPE)
+                             s_output = process2.communicate()[0]
+                             season_dirs=s_output.splitlines()
+
+                             # find correct season directory, or create new
+                             for k in xrange(len(season_dirs)):
+                                     if season_str in season_dirs[k]:
+                                             target_dir=show_path + str(season_dirs[k]) + "/"
+                                     elif season_int in season_dirs[k]:
+                                             target_dir=show_path + str(season_dirs[k]) + "/"
+                                     else:
+                                             new_dir=show_path+"Season "+season_str+"/"
+                                             process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
+                                             target_dir=new_dir
+                                             
+                # move command
+                tor_path= "Torrents/" + str(tor_name)
+                process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
                 
