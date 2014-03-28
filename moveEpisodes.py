@@ -46,6 +46,8 @@ for i in xrange(len(transmission_lines)):
 
                 # make sure success
 
+                target_dir = ''
+
                 # parse name
                 for j in xrange(len(show_dirs)):
 
