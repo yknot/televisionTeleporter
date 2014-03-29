@@ -59,7 +59,10 @@ for i in xrange(len(transmission_lines)):
                              season=reg_s.group()
                              season_int=str(int(season[1:]))
                              season_str=season[1:]
+                             print 'season string is'
                              print season_str
+                             print 'season int is'
+                             print season_int
 
                              # create path to show directory
                              show_path=dir_stem + str(show_dirs[j]) + "/"
@@ -75,37 +78,37 @@ for i in xrange(len(transmission_lines)):
                              for k in xrange(len(season_dirs)):
                                      if season_str in season_dirs[k]:
                                              target_dir=show_path + str(season_dirs[k]) + "/"
-
-                                             # move command
-                                             tor_path= "Torrents/" + str(tor_name)
-                                             process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
-                                        
-                                             # remove torrent command with id
-                                             remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                             process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                             remove_torrent_output = process.communicate()[0]
-                                     elif season_int in season_dirs[k]:
-                                             target_dir=show_path + str(season_dirs[k]) + "/"
-
-                                             # move command
-                                             tor_path= "Torrents/" + str(tor_name)
-                                             process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
-                                        
-                                             # remove torrent command with id
-                                             remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                             process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                             remove_torrent_output = process.communicate()[0]
-                                     else:
-                                             new_dir=show_path+"Season "+season_str+"/"
-                                             process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
-                                             target_dir=new_dir
-
+                                             print 'loop 1'
                                              # move command
                                              tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                              process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
                                         
                                              # remove torrent command with id
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                             process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                             remove_torrent_output = process.communicate()[0]
+                                             #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                             #remove_torrent_output = process.communicate()[0]
+                                     elif season_int in season_dirs[k]:
+                                             target_dir=show_path + str(season_dirs[k]) + "/"
+                                             print 'loop 2'
+                                             # move command
+                                             tor_path= "/home/xbmc/Torrents/" + str(tor_name)
+                                             process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
+                                        
+                                             # remove torrent command with id
+                                             remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
+                                             #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                             #remove_torrent_output = process.communicate()[0]
+                                     else:
+                                             new_dir=show_path+"Season "+season_str+"/"
+                                             process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
+                                             target_dir=new_dir
+                                             print 'loop 3'
+                                             # move command
+                                             tor_path= "/home/xbmc/Torrents/" + str(tor_name)
+                                             process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
+                                        
+                                             # remove torrent command with id
+                                             remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
+                                             #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                             #remove_torrent_output = process.communicate()[0]
                                      print target_dir                        
