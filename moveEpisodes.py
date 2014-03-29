@@ -30,10 +30,6 @@ for i in xrange(len(transmission_lines)):
         # if one or more of the torrents are seeding
         if '100%' in transmission_list:
 
-                # store index of the seeding
-                #Commenting out older code# index = transmission_list.index('Seeding')
-                #ids = []
-
                 # get torrent ID number
                 tor_id= transmission_list[0]
 
@@ -87,8 +83,8 @@ for i in xrange(len(transmission_lines)):
                                              
                                              # remove torrent command with id
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                             #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                             #remove_torrent_output = process.communicate()[0]
+                                             process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                             remove_torrent_output = process.communicate()[0]
                                              break
                                      elif season_int in season_dirs[k]:
                                              create_dir=False
@@ -100,8 +96,8 @@ for i in xrange(len(transmission_lines)):
                                         
                                              # remove torrent command with id
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                             #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                             #remove_torrent_output = process.communicate()[0]
+                                             process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                             remove_torrent_output = process.communicate()[0]
                                              break
                              if create_dir:
                                      new_dir=show_path+"Season "+season_str+"/"
@@ -114,6 +110,6 @@ for i in xrange(len(transmission_lines)):
                                 
                                      # remove torrent command with id
                                      remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
-                                     #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
-                                     #remove_torrent_output = process.communicate()[0]
+                                     process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
+                                     remove_torrent_output = process.communicate()[0]
                                      print target_dir                        
