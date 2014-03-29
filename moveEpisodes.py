@@ -50,7 +50,7 @@ for i in xrange(len(transmission_lines)):
                         print j
                         # convert directory name eztv format
                         temp=show_dirs[j].lower()
-                        temp.replace(" ", ".")
+                        temp=temp.replace(" ", ".")
                         dummy_tor_name=tor_name.lower()
                         print temp
                         print dummy_tor_name
