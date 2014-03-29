@@ -57,7 +57,8 @@ for i in xrange(len(transmission_lines)):
 
                         if temp in dummy_tor_name:
                              # find season number
-                             season=re.match("[s,S]\d\d",tor_name)   
+                             season=re.match("[s,S]\d\d",tor_name)
+                             print season
                              season_int=str(int(season[1:]))
                              season_str=season[1:]
                              print season_str
