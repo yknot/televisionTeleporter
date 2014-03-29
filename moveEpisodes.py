@@ -40,9 +40,7 @@ for i in xrange(len(transmission_lines)):
 
                 # get torrent name (for moving torrents)
                 tor_name=transmission_list[len(transmission_list)-1]
-                print tor_id
-                print tor_name
-                
+                 
                 # make sure success
 
                 target_dir = ''
@@ -54,15 +52,19 @@ for i in xrange(len(transmission_lines)):
                         temp=show_dirs[j].lower()
                         temp.replace(" ", ".")
                         dummy_tor_name=tor_name.lower()
+                        print temp
+                        print dummy_tor_name
 
                         if temp in dummy_tor_name:
                              # find season number
                              season=re.match("[s,S]\d\d",tor_name)   
                              season_int=str(int(season[1:]))
                              season_str=season[1:]
+                             print season_str
 
                              # create path to show directory
                              show_path=dir_stem + str(show_dirs[j]) + "/"
+                             print show_path
 
 
                              # list directories in show's directory (season folders)
@@ -107,4 +109,4 @@ for i in xrange(len(transmission_lines)):
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
                                              process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
                                              remove_torrent_output = process.communicate()[0]
-                                                             
+                                     print target_dir                        
