@@ -37,10 +37,12 @@ for i in xrange(len(transmission_lines)):
                 # get torrent ID number
                 tor_id= transmission_list[0]
 
+
                 # get torrent name (for moving torrents)
                 tor_name=transmission_list[len(transmission_list)-1]
-
-
+                print tor_id
+                print tor_name
+                
                 # make sure success
 
                 target_dir = ''
