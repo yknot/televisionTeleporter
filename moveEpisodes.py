@@ -1,4 +1,3 @@
-
 import subprocess
 import re
 
@@ -105,4 +104,3 @@ for i in xrange(len(transmission_lines)):
                                      remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
                                      process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
                                      remove_torrent_output = process.communicate()[0]
-                                     print target_dir                        
