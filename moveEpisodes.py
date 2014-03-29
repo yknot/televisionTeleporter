@@ -84,11 +84,12 @@ for i in xrange(len(transmission_lines)):
                                              # move command
                                              tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                              process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
-                                        
+                                             
                                              # remove torrent command with id
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
                                              #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
                                              #remove_torrent_output = process.communicate()[0]
+                                             break
                                      elif season_int in season_dirs[k]:
                                              create_dir=False
                                              target_dir=show_path + str(season_dirs[k]) + "/"
@@ -101,6 +102,7 @@ for i in xrange(len(transmission_lines)):
                                              remove_torrent_cmd = "transmission-remote -t " + str(tor_id) + " -r"
                                              #process = subprocess.Popen(remove_torrent_cmd.split(), stdout=subprocess.PIPE)
                                              #remove_torrent_output = process.communicate()[0]
+                                             break
                              if create_dir:
                                      new_dir=show_path+"Season "+season_str+"/"
                                      process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
