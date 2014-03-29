@@ -53,7 +53,7 @@ for i in xrange(len(transmission_lines)):
                         # convert directory name eztv format
                         temp=show_dirs[j].lower()
                         temp.replace(" ", ".")
-                        dummy_tor_name=torname.lower()
+                        dummy_tor_name=tor_name.lower()
 
                         if temp in dummy_tor_name:
                              # find season number
