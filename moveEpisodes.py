@@ -47,7 +47,7 @@ for i in xrange(len(transmission_lines)):
 
                 # parse name
                 for j in xrange(len(show_dirs)):
-
+                        print j
                         # convert directory name eztv format
                         temp=show_dirs[j].lower()
                         temp.replace(" ", ".")
