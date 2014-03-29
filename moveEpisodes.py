@@ -28,7 +28,7 @@ for i in xrange(len(transmission_lines)):
 
         transmission_list=transmission_lines[i].split()
         # if one or more of the torrents are seeding
-        if 'Seeding' in transmission_list:
+        if '100%' in transmission_list:
 
                 # store index of the seeding
                 #Commenting out older code# index = transmission_list.index('Seeding')
