@@ -1,5 +1,4 @@
 
-
 import subprocess
 import re
 
@@ -55,14 +54,11 @@ for i in xrange(len(transmission_lines)):
                              season=reg_s.group()
                              season_int=str(int(season[1:]))
                              season_str=season[1:]
-                             print 'season string is'
-                             print season_str
-                             print 'season int is'
-                             print season_int
+                             
 
                              # create path to show directory
                              show_path=dir_stem + str(show_dirs[j]) + "/"
-                             print show_path
+                             
 
 
                              # list directories in show's directory (season folders)
@@ -76,7 +72,6 @@ for i in xrange(len(transmission_lines)):
                                      if season_str in season_dirs[k]:
                                              create_dir=False
                                              target_dir=show_path + str(season_dirs[k]) + "/"
-                                             print 'loop 1'
                                              # move command
                                              tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                              process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
@@ -89,7 +84,6 @@ for i in xrange(len(transmission_lines)):
                                      elif season_int in season_dirs[k]:
                                              create_dir=False
                                              target_dir=show_path + str(season_dirs[k]) + "/"
-                                             print 'loop 2'
                                              # move command
                                              tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                              process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
@@ -103,7 +97,6 @@ for i in xrange(len(transmission_lines)):
                                      new_dir=show_path+"Season "+season_str+"/"
                                      process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
                                      target_dir=new_dir
-                                     print 'loop 3'
                                      # move command
                                      tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                      process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
