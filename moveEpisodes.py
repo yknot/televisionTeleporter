@@ -99,7 +99,7 @@ for i in xrange(len(transmission_lines)):
                                              target_dir=new_dir
 
                                              # move command
-                                             tor_path= "Torrents/" + str(tor_name)
+                                             tor_path= "/home/xbmc/Torrents/" + str(tor_name)
                                              process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
                                         
                                              # remove torrent command with id
