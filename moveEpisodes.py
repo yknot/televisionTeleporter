@@ -1,5 +1,9 @@
 import subprocess
 import re
+import simplejson
+
+with open('config.json') as infile:
+    config = simplejson.loads(infile.read())
 
 # command to find list of torrents
 transmission_list = 'transmission-remote -l'
@@ -9,17 +13,12 @@ transmission_output = process.communicate()[0]
 
 # split output into strings by line
 transmission_lines = transmission_output.splitlines()
-nlines = len(transmission_lines)
 
 # directory listing command, to provide list of folders for name comparison
-list_cmd = '/media/storage/XBMCMedia/TV Shows/'
-process = subprocess.Popen(['ls', list_cmd], stdout=subprocess.PIPE)
+dir_stem = config['TVRoot']
+process = subprocess.Popen(['ls', dir_stem], stdout=subprocess.PIPE)
 list_output = process.communicate()[0]
 show_dirs = list_output.splitlines()
-
-
-# to be used in target directory string
-dir_stem = '/media/storage/XBMCMedia/TV Shows/'
 
 # for each line
 for i in xrange(len(transmission_lines)):
@@ -72,7 +71,7 @@ for i in xrange(len(transmission_lines)):
                         create_dir = False
                         target_dir = show_path + str(season_dirs[k]) + "/"
                         # move command
-                        tor_path = "/home/xbmc/Torrents/" + str(tor_name)
+                        tor_path = config["DownloadPath"] + str(tor_name)
                         process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
 
                         # remove torrent command with id
@@ -84,7 +83,7 @@ for i in xrange(len(transmission_lines)):
                         create_dir = False
                         target_dir = show_path + str(season_dirs[k]) + "/"
                         # move command
-                        tor_path = "/home/xbmc/Torrents/" + str(tor_name)
+                        tor_path = config["DownloadPath"] + str(tor_name)
                         process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
 
                         # remove torrent command with id
@@ -97,7 +96,7 @@ for i in xrange(len(transmission_lines)):
                     process3 = subprocess.Popen(['mkdir', new_dir], stdout=subprocess.PIPE)
                     target_dir = new_dir
                     # move command
-                    tor_path = "/home/xbmc/Torrents/" + str(tor_name)
+                    tor_path = config["DownloadPath"] + str(tor_name)
                     process4 = subprocess.Popen(['mv', tor_path, target_dir], stdout=subprocess.PIPE)
 
                     # remove torrent command with id
