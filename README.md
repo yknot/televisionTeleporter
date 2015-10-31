@@ -16,3 +16,6 @@ this part of the teleporter is good to go.
 
 Update 3/27/14 (2)
 Target directory code completed, script should be smart enough to automatically move things now!
+
+to do:
+  need to modify so it can move files other than tv shows as well as from different sites
